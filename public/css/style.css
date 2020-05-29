@@ -1,0 +1,149 @@
+.rounded-top{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+#showPassword{
+    margin-left: .75em;
+    text-decoration: underline;
+}
+
+.form, .form-register {
+    background: rgb(255, 255, 255, .5);
+    width: 500px;
+    padding: 2em;
+    border: 5px solid rgb(66, 74, 92);
+    border-radius: 10px;
+}
+
+.form {
+    margin: 2em auto;
+}
+
+.form-register {
+    margin: 2em auto 10vh;
+}
+
+.form input, .form-register input, .form label, .form-register label, .form span, .form-register span {
+    position: relative;
+    left: 25%;
+    font-weight: 700;
+    color: rgb(63, 58, 58);
+    border-radius: 5px;
+    margin-bottom: -2em;
+}
+
+.form h2, .form-register h2 {
+    margin: 0 auto;
+    position: relative;
+    left: 15%;
+}
+
+#wrapper {
+    padding-left: 0;
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+    
+    #page-wrapper {
+        padding: 10px;
+    }
+}
+
+/* Top Navigation */
+
+#admin{
+    display: none;
+}
+
+#login{
+    display: inline-block;
+}
+#profile{
+    display: none;
+}
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #999;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #000;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+ul.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li.message-preview {
+    width: 275px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+li.message-preview>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+li.message-footer {
+    margin: 5px 0;
+}
+
+ul.alert-dropdown {
+    width: 200px;
+}
+
+
+
+
+
+
+
