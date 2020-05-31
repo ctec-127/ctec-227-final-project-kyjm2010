@@ -1,33 +1,31 @@
 <?php require_once("../resources/config.php"); 
 include(template_front . ds . "header.php");
 ?>
-
     <!-- Page Content -->
     <div class="container">
 
-        <!-- Jumbotron Header -->
-        <header class="jumbotron hero-spacer">
-            <h1>A Warm Welcome!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <p><a class="btn btn-primary btn-large">Call to action!</a>
-            </p>
-        </header>
-
-        <hr>
-
-        <!-- Title -->
         <div class="row">
-            <div class="col-lg-12">
-                <h3>Latest Features</h3>
-            </div>
-        </div>
-        <!-- /.row -->
+        <?php include(template_front . ds . "side-nav.php");?>
+            <?php display_message(); ?>
+            <div class="col-md-9">
+                <!-- <div class="row carousel-holder">
+                    <div class="col-md-12"> -->
+                    <!-- <?php include(template_front . ds . "slider.php");?> -->
+                    <!-- </div>
+                </div> -->
+                <div class="row">
+                <div class="bg-success">
+                <h2 class="text-center bg-success"><?php display_message();?></h2>                
+                </div>
+                <?php get_products_by_id($_GET['id']); ?>
+                
 
-        <!-- Page Features -->
-        <div class="row text-center">
-        <?php get_products_of_category();?>
+                </div>
+
+            </div>
+
         </div>
-        <!-- /.row -->
-        <?php include(template_front . ds . "footer.php");
-?>
-</div><!-- /.container -->
+
+    </div>
+    <!-- /.container -->
+    <!-- <?php include(template_front . ds . "footer.php");?>
