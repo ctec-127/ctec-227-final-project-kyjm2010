@@ -153,37 +153,7 @@ function get_categories(){
             }
         }
         
-        // function get_products_of_category() {
-        
-        // }
-// }
-
-    
-
-// function get_products_in_shop() {
-//     $query = query("SELECT * FROM products");
-//     confirm($query);
-
-//     while($row = fetch_array($query)){
-//         $product =<<<DELIMETER
-//         <div class="col-md-3 col-sm-6 hero-feature">
-//         <div class="thumbnail">
-//             <img src="{$row['product_image']}" alt="">
-//             <div class="caption">
-//                 <h3>{$row['product_title']}</h3>
-//                 <p>{$row['short_desc']}</p>
-//                 <p>
-//                     <a href="../resources/cart.php?add={$row['product_id']}" class="btn btn-primary">Buy Now!</a> 
-//                     <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
-//                 </p>
-//             </div>
-//         </div>
-//         </div>  
-//         DELIMETER;
-//         echo $product;
-//     }
-
-// }
+  
 
 function login_user(){
     $errorBucket = [];
@@ -518,7 +488,4 @@ function get_reports() {
         echo $reports;
     }
 }
-
-
-
 ?>
