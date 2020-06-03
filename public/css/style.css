@@ -72,8 +72,16 @@
 #login{
     display: inline-block;
 }
-#profile{
+
+#logout{
+    display:none;
+}
+#profile_manager{
     display: none;
+}
+
+#register{
+    display: inline-block;
 }
 .top-nav {
     padding: 0 15px;

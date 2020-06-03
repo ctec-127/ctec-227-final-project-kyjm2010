@@ -53,14 +53,15 @@ fetch('helper/is_logged_in.php')
     .then(res => res.json())
     .then(function (res) {
         if (res.status == "yes") {
-            if(res.role == "admin") {
             const login = document.querySelector('#login')
             login.style.display = 'none'
-            const logout = document.querySelector('#logout')
-            const profile = document.querySelector('#profile')
+            const profile = document.querySelector('#profile_manager')
             profile.style.display = 'inline-block'
+            const logout = document.querySelector('#logout')
+            logout.style.display = 'inline-block'
             const register = document.querySelector('#register')
             register.style.display = 'none'
+            if(res.role == "admin") {
             const admin = document.querySelector('#admin')
             admin.style.display = 'inline-block'
 
@@ -81,10 +82,6 @@ fetch('helper/is_logged_in.php')
         }
     }
 })
-
-//filter categories
-
- function change() {
  
 
 
