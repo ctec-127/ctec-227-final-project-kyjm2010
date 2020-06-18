@@ -6,7 +6,6 @@ include(template_front . ds . "header.php");
 <div class="container">
 
 <div class="row">
-    <h4 class="text-center bg-danger"><?php display_message();?></h4>
       <h1>My Cart</h1>
 
 

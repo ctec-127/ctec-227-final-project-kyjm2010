@@ -45,7 +45,7 @@ while($row = fetch_array($query)):
    
     <form action="">
         <div class="form-group">
-        <a class="btn btn-primary" href="item.php?add=<?php echo $row['product_id']?>&item">Add to Cart</a>
+        <a class="btn btn-primary" href="item.php?item_add=<?php echo $row['product_id']?>&item">Add to Cart</a>
         <a class="btn btn-success" href="checkout.php?add=<?php echo $row['product_id']?>&checkout">Buy Now</a>
 
     </form>

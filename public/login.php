@@ -5,7 +5,6 @@ include(template_front . ds . "header.php");
     <!-- Page Content -->
     <div class="container">
     <h1 class="text-center">Login</h1>
-    <h2 class="text-center bg-warning"><?php display_message();?></h2>
 <form class="form" id="login-form" action="login.php" method="POST">
     <label for="username">Username</label>
     <br><br>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2020 at 07:38 AM
+-- Generation Time: Jun 18, 2020 at 01:45 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -60,7 +60,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_amount`, `order_transaction`, `order_status`, `order_currency`) VALUES
-(40, 49.98, '3453434', 'Completed', 'USA');
+(43, 44, '34535434', 'Completed', 'USA'),
+(44, 44, '34535434', 'Completed', 'USA');
 
 -- --------------------------------------------------------
 
@@ -91,8 +92,7 @@ INSERT INTO `products` (`product_id`, `product_title`, `product_category_id`, `p
 (14, 'Boston Terrier Inlay Earrings', 14, 22, 13, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet convallis felis, a fringilla lacus mollis non. Nunc sodales mi in felis lacinia, vitae tristique massa pretium. Aenean ante tortor, dapibus non tempor eget, posuere nec massa. Aliquam velit enim, pellentesque quis est sit amet, imperdiet sodales augue. Phasellus pellentesque, dui ut ultrices luctus, quam urna volutpat urna, facilisis venenatis nunc nisi eget eros. Sed dignissim leo et tellus lacinia, sed pulvinar magna aliquam. Quisque pretium porttitor tristique. Cras dictum luctus eros in imperdiet. Quisque in est id eros varius rhoncus vitae vestibulum metus. In at velit sed mauris posuere consequat. Nunc dapibus scelerisque quam eu dignissim. Morbi blandit dui eu mi dignissim commodo vitae vitae augue.\\r\\n\\r\\n', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat sit amet arcu quis ultrices. In ullamcorper diam in ante tempor, quis scelerisque leo euismod. Nam ac laoreet enim. Pellentesque sed interdum sem. Cras tristique lacus eu eros commodo u', 'IMG_4100.JPG'),
 (15, 'Owl Stud Earrings', 15, 18, 10, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet convallis felis, a fringilla lacus mollis non. Nunc sodales mi in felis lacinia, vitae tristique massa pretium. Aenean ante tortor, dapibus non tempor eget, posuere nec massa. Aliquam velit enim, pellentesque quis est sit amet, imperdiet sodales augue. Phasellus pellentesque, dui ut ultrices luctus, quam urna volutpat urna, facilisis venenatis nunc nisi eget eros. Sed dignissim leo et tellus lacinia, sed pulvinar magna aliquam. Quisque pretium porttitor tristique. Cras dictum luctus eros in imperdiet. Quisque in est id eros varius rhoncus vitae vestibulum metus. In at velit sed mauris posuere consequat. Nunc dapibus scelerisque quam eu dignissim. Morbi blandit dui eu mi dignissim commodo vitae vitae augue.\\r\\n\\r\\n', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet convallis felis, a fringilla lacus mollis non. Nunc sodales mi in felis lacinia, vitae tristique massa pretium.', 'IMG_4099.JPG'),
 (17, 'Panda Earring Studs', 15, 18, 20, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum iaculis velit, id eleifend sem tempus eu. Sed ultrices ullamcorper leo, a tempor quam accumsan mollis. Cras pellentesque eu diam vitae porttitor. Cras nec magna eget justo lacinia finibus. Integer sollicitudin finibus diam, ut consectetur nulla cursus vitae. Nam aliquet ullamcorper nisl, sit amet vestibulum urna interdum eu. Suspendisse potenti. Integer convallis a nibh nec accumsan.\r\n\r\n', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum iaculis velit, id eleifend sem tempus eu', 'IMG_4088.JPG'),
-(20, 'Bigfoot Print Stud Earrings', 15, 18, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pellentesque ultricies mattis. Nam ultricies, sapien sit amet tristique malesuada, sapien nisi blandit orci, vitae lobortis magna mi a purus. Integer sit amet metus hendrerit, egestas augue at, elementum purus. Sed faucibus feugiat felis, id cursus odio elementum non. Vivamus dignissim at lacus nec aliquet. Vivamus consequat, turpis nec posuere rutrum, metus nunc dapibus libero, sed ornare odio nisi in nunc. Aenean auctor, augue eget malesuada condimentum, erat dui aliquet nunc, vel maximus augue ex ut ipsum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pellentesque ultricies mattis.', 'IMG_4089.JPG'),
-(21, 'Dragons Hide Scented Candle', 0, 20, 11, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit lectus, finibus sit amet arcu eget, eleifend convallis elit. Etiam dolor risus, fringilla non est eu, porttitor suscipit lacus. Nam a gravida massa. Suspendisse vulputate dignissim nulla, lacinia cursus neque. Quisque aliquet, libero nec pretium bibendum, ante nibh gravida odio, nec euismod erat magna ut quam. Curabitur ac metus pharetra, accumsan enim quis, consequat libero. Etiam quam lectus, varius et lacus nec, sodales placerat erat. Ut consequat arcu at velit commodo, at bibendum nibh aliquam. Donec interdum nisi vel purus porttitor, nec dictum arcu pretium.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit lectus, finibus sit amet arcu eget, eleifend convallis elit.', '99118314_590402551575304_6060249496615387136_o.jpg');
+(20, 'Bigfoot Print Stud Earrings', 15, 18, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pellentesque ultricies mattis. Nam ultricies, sapien sit amet tristique malesuada, sapien nisi blandit orci, vitae lobortis magna mi a purus. Integer sit amet metus hendrerit, egestas augue at, elementum purus. Sed faucibus feugiat felis, id cursus odio elementum non. Vivamus dignissim at lacus nec aliquet. Vivamus consequat, turpis nec posuere rutrum, metus nunc dapibus libero, sed ornare odio nisi in nunc. Aenean auctor, augue eget malesuada condimentum, erat dui aliquet nunc, vel maximus augue ex ut ipsum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pellentesque ultricies mattis.', 'IMG_4089.JPG');
 
 -- --------------------------------------------------------
 
@@ -108,6 +108,16 @@ CREATE TABLE `reports` (
   `product_title` varchar(255) NOT NULL,
   `product_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`report_id`, `product_id`, `order_id`, `product_price`, `product_title`, `product_quantity`) VALUES
+(95, 10, 41, 22, 'Sloth Stud Earrings', 1),
+(96, 11, 42, 22, 'Corgi Butt Stud Earrings', 1),
+(97, 12, 43, 22, 'Skull Stud Earrings', 1),
+(98, 13, 44, 22, 'Fox Inlay Earrings', 1);
 
 -- --------------------------------------------------------
 
@@ -208,13 +218,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -226,7 +236,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `reviews`

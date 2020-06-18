@@ -8,6 +8,7 @@ if(isset($_GET['add'])) {
         while($row = fetch_array($query)) {
             if($row['product_qty'] != $_SESSION['product_' . $_GET['add']]) {
                 $_SESSION['product_' . $_GET['add']] += 1;
+                set_message($row['product_title'] . " added to cart");
                 redirect("../public/checkout.php");
             } else {
                 set_message("Only " . $row['product_qty'] . " ". $row['product_title'] . " in stock");
@@ -19,7 +20,6 @@ if(isset($_GET['add'])) {
             if($row['product_qty'] != $_SESSION['product_' . $_GET['add']]) {
                 $_SESSION['product_' . $_GET['add']] += 1;
                 set_message($row['product_title'] . " added to cart");
-                redirect("index.php");
             } else {
                 set_message("Only " . $row['product_qty'] . " ". $row['product_title'] . " in stock");
                 redirect("checkout.php");
@@ -35,17 +35,6 @@ if(isset($_GET['in_cart_add'])) {
 
     $query = query("SELECT * FROM products WHERE product_id=" . escape_string($_GET['in_cart_add']) . " ");
     confirm($query);
-    if(isset($_GET['checkout'])) {
-        while($row = fetch_array($query)) {
-            if($row['product_qty'] != $_SESSION['product_' . $_GET['in_cart_add']]) {
-                $_SESSION['product_' . $_GET['in_cart_add']] += 1;
-                redirect("../public/checkout.php");
-            } else {
-                set_message("Only " . $row['product_qty'] . " ". $row['product_title'] . " in stock");
-                redirect("../public/checkout.php");
-            }
-        }
-    } else {
         while($row = fetch_array($query)) {
             if($row['product_qty'] != $_SESSION['product_' . $_GET['in_cart_add']]) {
                 $_SESSION['product_' . $_GET['in_cart_add']] += 1;
@@ -58,7 +47,22 @@ if(isset($_GET['in_cart_add'])) {
         }
     }
 
-}
+if(isset($_GET['item_add'])) {
+
+    $query = query("SELECT * FROM products WHERE product_id=" . escape_string($_GET['item_add']) . " ");
+    confirm($query);
+        while($row = fetch_array($query)) {
+            if($row['product_qty'] != $_SESSION['product_' . $_GET['item_add']]) {
+                $_SESSION['product_' . $_GET['item_add']] += 1;
+                set_message($row['product_title'] . " added to cart");
+                redirect("index.php");
+            } else {
+                set_message("Only " . $row['product_qty'] . " ". $row['product_title'] . " in stock");
+                redirect("index.php");
+            }
+        }
+    }
+
 
 if(isset($_GET['buynow'])){
     redirect("../public/checkout.php");
@@ -94,8 +98,9 @@ function cart(){
         if(substr($name, 0, 8) == "product_") {
             $length = strlen($name) - 8;
             $id = substr($name, 8, $length);
-            $query = query("SELECT * FROM products WHERE product_id=" . escape_string($id). " ");
+            $query = query("SELECT * FROM products WHERE product_id='" . $id . "'");
             confirm($query);
+            // echo var_dump($query);
             while($row = fetch_array($query)) {
 
                 $sub = $row['product_price'] * $value;

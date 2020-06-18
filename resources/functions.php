@@ -39,14 +39,13 @@ function escape_string($string){
 }
 
 function fetch_array($result){
-    return mysqli_fetch_array($result);
+    return mysqli_fetch_assoc($result);
 }
 
 // get products
 function get_products() {
     $query = query("SELECT * FROM products");
     confirm($query);
-
     while($row = fetch_array($query)){
 
         $product_image = display_image($row['product_image']);
