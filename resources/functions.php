@@ -53,22 +53,22 @@ function get_products() {
 
         $product =<<<DELIMETER
             <div class="col-sm-4 col-lg-4 col-md-4">
-            
-            <h4 class="item-title"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
-                    <a href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
+            <div class="product-wrapper">
+                    <h4 class="item-title"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
+                    <a class="item-image" href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
                     <div class="thumbnail">
                         <div class="caption">
                             <h4>&#36;{$row['product_price']}</h4>
                             <p>{$row['short_desc']}</p>
                         </div>
-                        <hr>
+                        <div class="line"></div>
                         <div class="mb-4"><a class="btn btn-primary shadow-none" href="index.php?add={$row['product_id']}">Add to Cart</a></div>
                         <div class="mb-4"><a class="btn btn-success shadow-none" href="../resources/cart.php?add={$row['product_id']}&buynow">Buy Now</a></div>
                         
                        
                         </div>
                     </div>
-            
+            </div>
         DELIMETER;
         echo $product;
     }
@@ -87,13 +87,13 @@ function get_products_by_id($id) {
             <div class="col-sm-4 col-lg-4 col-md-4">
             
             <h4 class="item-title"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
-                    <a href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
+                    <a class="item-image" href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
                     <div class="thumbnail">
                         <div class="caption">
                             <h4>&#36;{$row['product_price']}</h4>
                             <p>{$row['short_desc']}</p>
                         </div>
-                        <hr>
+                        <div class="line"></div>
                         <div class="mb-4"><a class="btn btn-primary shadow-none" href="index.php?add={$row['product_id']}">Add to Cart</a></div>
                         <div class="mb-4"><a class="btn btn-success shadow-none" href="../resources/cart.php?add={$row['product_id']}&buynow">Buy Now</a></div>
                         
@@ -138,13 +138,13 @@ function search_products($search) {
             <div class="col-sm-4 col-lg-4 col-md-4">
             
             <h4 class="item-title"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
-                    <a href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
+                    <a class="item-image" href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
                     <div class="thumbnail">
                         <div class="caption">
                             <h4>&#36;{$row['product_price']}</h4>
                             <p>{$row['short_desc']}</p>
                         </div>
-                        <hr>
+                        <div class="line"></div>
                         <div class="mb-4"><a class="btn btn-primary" href="index.php?add={$row['product_id']}">Add to Cart</a></div>
                         <div class="mb-4"><a class="btn btn-success" href="../resources/cart.php?add={$row['product_id']}&buynow">Buy Now</a></div>
                         

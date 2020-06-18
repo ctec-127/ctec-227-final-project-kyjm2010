@@ -13,8 +13,8 @@
         <div class="branding">
             <img src="../resources/images/logo3.png" alt="business logo">
             <div class="business">
-                <span class="business-title"><h4>Immortal Wood Designs</h4></span><br>
-                <span class="business-tagline"><p>"Craftsmanship to Stand the Test of Time"</h4></span>
+                <h4 class="business-title">Immortal Wood Designs</h4>
+                <p class="business-tagline">"Craftsmanship to Stand the Test of Time"</p>
             </div>
         </div>
         <div class="log">

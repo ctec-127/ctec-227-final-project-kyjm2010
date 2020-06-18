@@ -53,6 +53,10 @@ fetch('helper/is_logged_in.php')
     .then(res => res.json())
     .then(function (res) {
         if (res.status == "yes") {
+            if (res.role == "admin") {
+                const admin = document.querySelector('#admin')
+                admin.style.display = 'inline-block'
+            }
             const login = document.querySelector('#login')
             login.style.display = 'none'
             const profile = document.querySelector('#profile_manager')
@@ -63,10 +67,6 @@ fetch('helper/is_logged_in.php')
             register.style.display = 'none'
             const addReview = document.querySelector('#addReview')
             addReview.style.display = 'inline-block'
-            if(res.role == "admin") {
-            const admin = document.querySelector('#admin')
-            admin.style.display = 'inline-block'
-
             logout.addEventListener('click', function (e) {
                 e.preventDefault()
                 fetch('helper/logout_ajax.php')
@@ -81,12 +81,12 @@ fetch('helper/is_logged_in.php')
                         }
                     })
             })
-        } 
-    } else {
+
+        } else {
             addReview.style.display = 'none'
         }
-})
- 
+    })
+
 
 
 
