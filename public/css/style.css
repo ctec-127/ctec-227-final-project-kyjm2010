@@ -24,6 +24,7 @@ body{
     font-weight: 700 !important;
     width: 100%;
     outline: 0 !important;
+    border: none !important;
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus{
@@ -42,7 +43,7 @@ body{
     color: black !important;
     font-weight: 700 !important;
     width: 100%;
-    border-color: black;
+    border: none !important;
     outline: 0 !important;
 }
 
