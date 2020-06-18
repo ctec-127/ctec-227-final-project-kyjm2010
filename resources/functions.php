@@ -58,7 +58,7 @@ function get_products() {
                     <a class="item-image" href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
                     <div class="thumbnail">
                         <div class="caption">
-                            <h4>&#36;{$row['product_price']}</h4>
+                            <h4 class="price">&#36;{$row['product_price']}</h4>
                             <p>{$row['short_desc']}</p>
                         </div>
                         <div class="line"></div>
@@ -85,12 +85,12 @@ function get_products_by_id($id) {
 
         $product =<<<DELIMETER
             <div class="col-sm-4 col-lg-4 col-md-4">
-            
+            <div class="product-wrapper">
             <h4 class="item-title"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
                     <a class="item-image" href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
                     <div class="thumbnail">
                         <div class="caption">
-                            <h4>&#36;{$row['product_price']}</h4>
+                            <h4 class="price">&#36;{$row['product_price']}</h4>
                             <p>{$row['short_desc']}</p>
                         </div>
                         <div class="line"></div>
@@ -99,6 +99,7 @@ function get_products_by_id($id) {
                         
                        
                         </div>
+                    </div>
                     </div>
             
         DELIMETER;
@@ -136,12 +137,12 @@ function search_products($search) {
 
         $product =<<<DELIMETER
             <div class="col-sm-4 col-lg-4 col-md-4">
-            
+            <div class="product-wrapper">
             <h4 class="item-title"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
                     <a class="item-image" href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
                     <div class="thumbnail">
                         <div class="caption">
-                            <h4>&#36;{$row['product_price']}</h4>
+                            <h4 class="price">&#36;{$row['product_price']}</h4>
                             <p>{$row['short_desc']}</p>
                         </div>
                         <div class="line"></div>
@@ -150,6 +151,7 @@ function search_products($search) {
                         
                        
                         </div>
+                    </div>
                     </div>
             
         DELIMETER;

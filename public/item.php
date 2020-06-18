@@ -1,4 +1,4 @@
-
+<!-- Add to url to fake a sale ---- public/thank_you.php?tx=34535434&amt=345&cc=USA&st=Completed -->
 <?php  
 require_once("../resources/config.php");
 function getAverageRating(){
