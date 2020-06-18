@@ -32,7 +32,7 @@ while($row = fetch_array($query)):
 
     <div class="col-md-5">
 
-        <h4 class="item-heading"><?php echo $row['product_title'];?></h4>
+        <h4 class="item-title"><?php echo $row['product_title'];?></h4>
         <div class="thumbnail">
          
 
