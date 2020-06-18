@@ -6,18 +6,19 @@ include(template_front . ds . "header.php");
 
         <div class="row">
         <?php include(template_front . ds . "side-nav.php");?>
-            <?php display_message(); ?>
             <div class="col-md-9">
-                <div class="row carousel-holder">
-                    <div class="col-md-12">
-                    <?php include(template_front . ds . "slider.php");?>
-                    </div>
-                </div>
-                <div class="row">
-                <?php get_products(); ?>
+        <h3 class="section-subheading">
+                    <?php display_message();?>
+        </h3>
+                <?php if($_SERVER['REQUEST_METHOD'] == "POST"){
+                    if(!empty($_POST['search']))
+                    search_products($_POST['search']);
+                } else {
+                    get_products();
+                }
                 
-
-                </div>
+                ?>
+               
 
             </div>
 

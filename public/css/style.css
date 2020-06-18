@@ -1,3 +1,194 @@
+body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #849db5;
+}
+.container{
+    margin-top: 10em;
+    width: 100%;
+}
+
+.btn-rounded{
+   height: 34px;
+}
+
+.cart-image{
+    border-radius: 5px;
+}
+
+.btn-primary{
+    background: #d1b158 !important;
+    color: black !important;
+    font-weight: 700 !important;
+    width: 100%;
+    outline: 0 !important;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus{
+    outline:none !important;
+    box-shadow:none !important;
+}
+
+.img-responsive{
+    border-radius: 5px;
+    border: 5px solid #2b2b29;
+}
+
+.btn-success{
+    margin-top: .25em;
+    background: #db8840!important;
+    color: black !important;
+    font-weight: 700 !important;
+    width: 100%;
+    border-color: black;
+    outline: 0 !important;
+}
+
+.filterbtn{
+    
+    background: #2b2b29;
+    color: white;
+    width: 50%;
+    padding: .5em;
+    border-radius: 5px;
+}
+
+.category{
+    font-size: 1.3em;
+    margin-top: .5em;
+}
+.item-title{
+    text-align: center;
+    background: #2b2b29;
+    padding: .5em;
+    border-bottom: 5px solid #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom:-.05em;
+}
+.item-title a, .item-title a:hover{
+    color: white;
+}
+tr{
+    font-size: 1.6em;
+}
+td{
+    font-size:1.3em;
+}
+
+.register-now{
+    display: inline-block;
+    margin-left: .5em;
+}
+
+.business{
+    grid-area: brand;
+    margin-top: 1em;
+    color:white;
+    font-family: times;
+}
+
+.business-title{
+    display: inline-block;
+    margin-left: 1em;
+
+}
+
+.business-tagline{
+    margin-left: -.8em;
+    display: inline-block;
+}
+
+.site-nav {
+    background: #2b2b29;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 5px solid #000;
+}
+
+.branding{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 100px 1fr;
+    grid-template-areas: "image brand"
+}
+
+.branding img{
+    height: 80px;
+    width: 90px;
+    margin-left: 1em;
+    position: relative;
+    grid-area: image;
+}
+
+.search{
+    /* margin-right: .5em; */
+    margin-bottom: .75em;
+    margin-right: 1em;
+}
+
+.log a{
+    font-size: 1.3em;
+    margin: 1em;
+    color: white; 
+}
+
+.log a:hover, .hud a:hover{
+    color: white;
+}
+
+.contact{
+    width: 500px;
+    margin: 0 auto;
+}
+
+#addReview{
+    display: inline-block;
+}
+
+.hud a{
+    color: white;
+    margin: .5em;
+}
+
+.logged-in a{
+    position: relative;
+    left: 4em;
+}
+
+.login-register a{
+    position: relative;
+    left: 10em;
+}
+footer{
+    width: 100%;
+    height: 100px;
+    background: #2b2b29;
+    color: white;
+    position: relative;
+    bottom: 0;
+    margin:0 auto;
+    text-align: center;
+    border-top: 5px solid #000;
+    padding: 1em;
+}
+
+.section-subheading{
+    width: 800px;
+    margin: 0 auto;
+    padding: .5em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.paypal{
+    color: red ;
+}
 .rounded-top{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -11,7 +202,7 @@
     background: rgb(255, 255, 255, .5);
     width: 500px;
     padding: 2em;
-    border: 5px solid rgb(66, 74, 92);
+    border: 5px solid #2b2b29;
     border-radius: 10px;
 }
 
@@ -20,7 +211,7 @@
 }
 
 .form-register {
-    margin: 2em auto 10vh;
+    margin: 2em auto ;
 }
 
 .form input, .form-register input, .form label, .form-register label, .form span, .form-register span {
@@ -40,12 +231,6 @@
 
 #wrapper {
     padding-left: 0;
-}
-
-#page-wrapper {
-    width: 100%;
-    padding: 0;
-    background-color: #fff;
 }
 
 .huge {
@@ -83,71 +268,8 @@
 #register{
     display: inline-block;
 }
-.top-nav {
-    padding: 0 15px;
-}
 
-.top-nav>li {
-    display: inline-block;
-    float: left;
-}
 
-.top-nav>li>a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    line-height: 20px;
-    color: #999;
-}
-
-.top-nav>li>a:hover,
-.top-nav>li>a:focus,
-.top-nav>.open>a,
-.top-nav>.open>a:hover,
-.top-nav>.open>a:focus {
-    color: #fff;
-    background-color: #000;
-}
-
-.top-nav>.open>.dropdown-menu {
-    float: left;
-    position: absolute;
-    margin-top: 0;
-    border: 1px solid rgba(0,0,0,.15);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    background-color: #fff;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-}
-
-.top-nav>.open>.dropdown-menu>li>a {
-    white-space: normal;
-}
-
-ul.message-dropdown {
-    padding: 0;
-    max-height: 250px;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-li.message-preview {
-    width: 275px;
-    border-bottom: 1px solid rgba(0,0,0,.15);
-}
-
-li.message-preview>a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-li.message-footer {
-    margin: 5px 0;
-}
-
-ul.alert-dropdown {
-    width: 200px;
-}
 
 
 

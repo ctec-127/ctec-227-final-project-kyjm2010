@@ -7,7 +7,7 @@ include(template_front . ds . "header.php");
 
 <div class="row">
     <h4 class="text-center bg-danger"><?php display_message();?></h4>
-      <h1>Checkout</h1>
+      <h1>My Cart</h1>
 
 
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
@@ -67,5 +67,5 @@ include(template_front . ds . "header.php");
 
  </div><!--Main Content-->
 
-
+</div>
  <?php include(template_front . ds . "footer.php");?>

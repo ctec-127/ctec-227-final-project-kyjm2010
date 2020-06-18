@@ -29,6 +29,41 @@ if(isset($_GET['add'])) {
 
 }
 
+
+
+if(isset($_GET['in_cart_add'])) {
+
+    $query = query("SELECT * FROM products WHERE product_id=" . escape_string($_GET['in_cart_add']) . " ");
+    confirm($query);
+    if(isset($_GET['checkout'])) {
+        while($row = fetch_array($query)) {
+            if($row['product_qty'] != $_SESSION['product_' . $_GET['in_cart_add']]) {
+                $_SESSION['product_' . $_GET['in_cart_add']] += 1;
+                redirect("../public/checkout.php");
+            } else {
+                set_message("Only " . $row['product_qty'] . " ". $row['product_title'] . " in stock");
+                redirect("../public/checkout.php");
+            }
+        }
+    } else {
+        while($row = fetch_array($query)) {
+            if($row['product_qty'] != $_SESSION['product_' . $_GET['in_cart_add']]) {
+                $_SESSION['product_' . $_GET['in_cart_add']] += 1;
+                set_message($row['product_title'] . " added to cart");
+                redirect("../public/checkout.php");
+            } else {
+                set_message("Only " . $row['product_qty'] . " ". $row['product_title'] . " in stock");
+                redirect("../public/checkout.php");
+            }
+        }
+    }
+
+}
+
+if(isset($_GET['buynow'])){
+    redirect("../public/checkout.php");
+}
+
 if(isset($_GET['remove'])){
     $_SESSION['product_' . $_GET['remove']] --;
     if($_SESSION['product_' . $_GET['remove']] <1) {
@@ -68,16 +103,17 @@ function cart(){
                 $product_image = display_image($row['product_image']);
                 $product = <<<DELIMETER
                 <tr>
-                    <td>{$row['product_title']}<br>
-                    <img width='100' src='../resources/{$product_image}'>
+                <td>
+                <img class="cart-image" width='100' src='../resources/{$product_image}'>
+                {$row['product_title']}
                     </td>
                     <td>&#36;{$row['product_price']}</td>
                     <td>{$value}</td>
                     <td>&#36;{$sub}</td>
                     <td>
-                    <a class='btn btn-warning'href="checkout.php?remove={$row['product_id']}"><span class='glyphicon glyphicon-minus'></span></a>
-                    <a class='btn btn-success'href="checkout.php?add={$row['product_id']}"><span class='glyphicon glyphicon-plus'></span></a>
-                    <a class='btn btn-danger'href="checkout.php?delete={$row['product_id']}"><span class='glyphicon glyphicon-remove'></span></a></td>
+                    <a class='btn'href="checkout.php?remove={$row['product_id']}"><span class='glyphicon glyphicon-minus'></span></a>
+                    <a class='btn'href="checkout.php?in_cart_add={$row['product_id']}"><span class='glyphicon glyphicon-plus'></span></a>
+                    <a class='btn'href="checkout.php?delete={$row['product_id']}"><span class='glyphicon glyphicon-remove'></span></a></td>
                 </tr>
                 <input type="hidden" name="item_name_{$item_name}" value="{$row['product_title']}">
                 <input type="hidden" name="item_number_{$item_number}" value="{$row['product_id']}">
@@ -104,7 +140,7 @@ function cart(){
 function show_paypal(){
     if(isset($_SESSION['item_quantity']) && $_SESSION['item_quantity']>=1){
         $paypal_button = <<<DELIMETER
-        <input type="image" name="uplpoad"
+        <input type="image" name="uplpoad" class="paypal"
         src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
         alt="PayPal - The safer, easier way to pay online">
         DELIMETER;

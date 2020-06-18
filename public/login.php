@@ -16,7 +16,7 @@ include(template_front . ds . "header.php");
     <br><br>
     <input type="password" name="password" id="password">
     <br><br>
-    <input class="button" type="submit" name="submit" id="login-submit" value="Login"><span><p>or register <a href="register.php">here</a></p></span> 
+    <input class="button" type="submit" name="submit" id="login-submit" value="Login"><span class="register-now"><p>or register <a href="register.php">here</a></p></span> 
 </form>
 
 <?php login_user(); ?>
@@ -25,7 +25,5 @@ include(template_front . ds . "header.php");
 
     </div>
     <!-- /.container -->
-
-    <div class="container">
     <script src="js/script.js"></script>
     <?php include(template_front . ds . "footer.php");?>

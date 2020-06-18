@@ -54,27 +54,18 @@ function get_products() {
         $product =<<<DELIMETER
             <div class="col-sm-4 col-lg-4 col-md-4">
             
-            <h4 class="text-center"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</h4></a>
-                    <a href="item.php?id={$row['product_id']}"><img class="rounded-top" width="100%" src="../resources/{$product_image}" alt=""></a>
+            <h4 class="item-title"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
+                    <a href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
                     <div class="thumbnail">
                         <div class="caption">
                             <h4>&#36;{$row['product_price']}</h4>
                             <p>{$row['short_desc']}</p>
                         </div>
                         <hr>
-                        <div class="text-center mb-4"><a class="btn btn-primary" href="index.php?add={$row['product_id']}">Add to Cart</a>
-                        <a class="btn btn-success" href="../resources/cart.php?add={$row['product_id']}&buynow">Buy Now</a>
-                        </div>
-                        <div class="ratings">
-                        <p class="pull-right">18 reviews</p>
-                        <p>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                        </p>
-                        </div>
+                        <div class="mb-4"><a class="btn btn-primary shadow-none" href="index.php?add={$row['product_id']}">Add to Cart</a></div>
+                        <div class="mb-4"><a class="btn btn-success shadow-none" href="../resources/cart.php?add={$row['product_id']}&buynow">Buy Now</a></div>
+                        
+                       
                         </div>
                     </div>
             
@@ -95,27 +86,18 @@ function get_products_by_id($id) {
         $product =<<<DELIMETER
             <div class="col-sm-4 col-lg-4 col-md-4">
             
-            <h4 class="text-center"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</h4></a>
-                    <a href="item.php?id={$row['product_id']}"><img class="rounded-top" width="100%" src="../resources/{$product_image}" alt=""></a>
+            <h4 class="item-title"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
+                    <a href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
                     <div class="thumbnail">
                         <div class="caption">
                             <h4>&#36;{$row['product_price']}</h4>
                             <p>{$row['short_desc']}</p>
                         </div>
                         <hr>
-                        <div class="text-center mb-4"><a class="btn btn-primary" href="index.php?add={$row['product_id']}">Add to Cart</a>
-                        <a class="btn btn-success" href="../resources/cart.php?add={$row['product_id']}&buynow">Buy Now</a>
-                        </div>
-                        <div class="ratings">
-                        <p class="pull-right">18 reviews</p>
-                        <p>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                        </p>
-                        </div>
+                        <div class="mb-4"><a class="btn btn-primary shadow-none" href="index.php?add={$row['product_id']}">Add to Cart</a></div>
+                        <div class="mb-4"><a class="btn btn-success shadow-none" href="../resources/cart.php?add={$row['product_id']}&buynow">Buy Now</a></div>
+                        
+                       
                         </div>
                     </div>
             
@@ -125,6 +107,58 @@ function get_products_by_id($id) {
 
 }
 
+function get_reviews_by_id() {
+    // $query = query("SELECT * FROM reviews WHERE product =" . escape_string($_GET['id']) . " ");
+    // confifm($query);
+
+    // while($row = fetch_array($query)) {
+    //     $review =<<<DELIMETER
+    //     <div class="col-md-12">
+    //         <div class="row">
+    //             <h3>2 Reviews From </h3>
+    //             <h3>{$row['user']}</h3>
+          
+    //         </div>
+    //     </div>
+    //     <hr>
+                        
+    //     DELIMETER;
+    // echo $review;
+    // }
+}
+
+function search_products($search) {
+    $query = query("SELECT * FROM products WHERE product_title LIKE '%$search%' ORDER BY product_title ASC");
+    confirm($query);
+    while($row = fetch_array($query)){
+
+        $product_image = display_image($row['product_image']);
+
+        $product =<<<DELIMETER
+            <div class="col-sm-4 col-lg-4 col-md-4">
+            
+            <h4 class="item-title"><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
+                    <a href="item.php?id={$row['product_id']}"><img height="200px"  width="100%" src="../resources/{$product_image}" alt=""></a>
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>&#36;{$row['product_price']}</h4>
+                            <p>{$row['short_desc']}</p>
+                        </div>
+                        <hr>
+                        <div class="mb-4"><a class="btn btn-primary" href="index.php?add={$row['product_id']}">Add to Cart</a></div>
+                        <div class="mb-4"><a class="btn btn-success" href="../resources/cart.php?add={$row['product_id']}&buynow">Buy Now</a></div>
+                        
+                       
+                        </div>
+                    </div>
+            
+        DELIMETER;
+        echo $product;
+    }
+}
+
+
+
 function get_categories(){
     $query = query("SELECT * FROM categories");
         confirm($query);
@@ -133,7 +167,7 @@ function get_categories(){
             $link_id = $row['cat_id'];
             $category=<<<DELIMETER
             <input type="checkbox" name="category" id="$link_id" value='$link_id'>
-            <label for="$link_id">{$row['cat_title']}</label>
+            <label for="$link_id" class="category">{$row['cat_title']}</label>
             <br>
         DELIMETER;
         echo $category;
@@ -181,13 +215,11 @@ function login_user(){
             } elseif (mysqli_num_rows($query) == 1){
                 $row = fetch_array($query);
                 $_SESSION['user_type'] = $row['user_type'];
+                $_SESSION['firstname'] = $row['first_name'];
+                $_SESSION['username'] = $username;
                 if($_SESSION['user_type'] == "admin"){
-                    $_SESSION['username'] = $username;
-                    // set_message("Welcome {$username}");
-                    redirect("admin");
+                    redirect("admin?orders");
                 } else {
-                    $_SESSION['username'] = $username;
-                    // set_message("Welcome {$username}");
                     redirect("index.php");
                 }
             }
@@ -237,13 +269,6 @@ function register_user() {
             $reg_query = query("INSERT INTO user(first_name, last_name, user_name, email, password) 
                         VALUES('$first_name','$last_name','$user_name','$email','$password')");
             confirm($reg_query);
-    
-            // if(!$result) {
-            //     echo "<div>There was a problem registering your account</div>";
-            // } else {
-            //     set_message("You are ready to log in!");
-            //     redirectr('login.php');
-            // }
         } else {
             display_error_bucket($errorBucket);
         }
@@ -263,14 +288,13 @@ function display_error_bucket($errorBucket){
 
 function send_message(){
     if(isset($_POST['submit'])){
-        $to = "kyjm2010@gmail.com";
        $name = $_POST['name'];
        $email = $_POST['email'];
        $subject = $_POST['subject'];
        $message = $_POST['message'];
        
-       $headers = "From: {$name} {$email}";
-       $result = mail($to, $subject, $message, $headers);
+       $headers = "From:{$email}";
+       $result = mail("kyjm2010@gmail.com", "test", "test-message", "Sarah Bruce");
        if(!$result){
            set_message("Sorry we could not send your message");
            redirect("contact.php");

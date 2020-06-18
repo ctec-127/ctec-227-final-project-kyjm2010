@@ -61,6 +61,8 @@ fetch('helper/is_logged_in.php')
             logout.style.display = 'inline-block'
             const register = document.querySelector('#register')
             register.style.display = 'none'
+            const addReview = document.querySelector('#addReview')
+            addReview.style.display = 'inline-block'
             if(res.role == "admin") {
             const admin = document.querySelector('#admin')
             admin.style.display = 'inline-block'
@@ -79,8 +81,10 @@ fetch('helper/is_logged_in.php')
                         }
                     })
             })
+        } 
+    } else {
+            addReview.style.display = 'none'
         }
-    }
 })
  
 
